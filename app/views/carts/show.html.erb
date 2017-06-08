@@ -6,7 +6,7 @@
         <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
       <% end %> </p>
     <% end %>
-    <p>Order total: <strong><%= number_to_currency(@cart.total) %></strong> </p>
+    <p>Order total: <strong><%= number_to_currency(@cart.total.to_f/100) %></strong> </p>
 
     <%= button_to 'Checkout', checkout_path %>
 <% end %>

@@ -1,11 +1,11 @@
-<nav>
-    <%= link_to "Store Home", store_path %>
-    <%= link_to "Cart", cart_path(current_user.current_cart) if current_user && current_user.current_cart %>
+<ul class="nav navbar-nav">
+    <%= link_to "Store Home", store_path %>  |
+    <%= link_to "Cart", cart_path(current_user.current_cart) if current_user && current_user.current_cart %>  |
     <% if !user_signed_in? %>
-        <%= link_to "sign in", new_user_session_path %>
+        <%= link_to "sign in", new_user_session_path %>  |
         <%= link_to "Sign up", new_user_registration_path %>
     <% else %>
-        <%= "Signed in as #{current_user.email}" %>
+        <%= link_to "Signed in as #{current_user.email}", store_path%>  |
         <%= link_to "Sign out", destroy_user_session_path, :method => "delete"%>
     <% end %>
-</nav>
+</ul>
