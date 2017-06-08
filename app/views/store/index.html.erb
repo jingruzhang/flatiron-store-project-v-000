@@ -1,7 +1,10 @@
 <h1>Categories</h1>
-<% @categories.each do |category| %>
-  <%= link_to category.title, category_path(category) %>
-<% end %>
+<ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.title, category_path(category) %></li>
+    <% end %>
+</ul>
+
 <br>
 
 <h1>Available Items</h1>
