@@ -1,8 +1,6 @@
 <nav>
     <%= link_to "Store Home", store_path %>
-    <% if !!@cart %>
-        <%= link_to "Cart", cart_path(current_cart) %>
-    <% end %>
+    <%= link_to "Cart", cart_path(current_user.current_cart) if current_user && current_user.current_cart %>
     <% if !user_signed_in? %>
         <%= link_to "sign in", new_user_session_path %>
         <%= link_to "Sign up", new_user_registration_path %>
